@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Solicitud</title>
+    <style>
+        /* Asegurar que la tipografía de input y textarea sea la misma */
+        input, textarea {
+            font-family: inherit;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Crear Nueva Solicitud (Ticket)</h2>
+    <form action="solicitud.php" method="POST">
+        <label>Título:</label><br>
+        <input type="text" name="titulo" required><br><br>
+        
+        <label>Descripción del problema:</label><br>
+        <textarea name="descripcion" rows="5" cols="40" required></textarea><br><br>
+        
+        <button type="button" onclick="alert('Solicitud enviada (simulado). En un proyecto real esto iría a solicitud.php')">Enviar Solicitud</button>
+    </form>
+    <br>
+    <a href="../index_usuario.html">Volver</a>
+</body>
+</html>
