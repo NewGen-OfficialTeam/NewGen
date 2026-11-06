@@ -1,0 +1,35 @@
+﻿<?php
+include("seguridad.php");
+include("conexion.php");
+
+// Consultas reales para el Dashboard
+$nombre_usuario = $_SESSION["nombre"] ?? "Usuario";
+$email_usuario = ""; // No guardamos el email en session en login.php, deberiamos
+// Determinar Rol
+$rol_nombre = "Usuario";
+if(isset($_SESSION["rol"])){
+    if($_SESSION["rol"] == 1) $rol_nombre = "Admin";
+    if($_SESSION["rol"] == 2) $rol_nombre = "Técnico";
+    if($_SESSION["rol"] == 3) $rol_nombre = "Solicitante";
+} else if(isset($_SESSION["tipo"]) && $_SESSION["tipo"] == "tecnico"){
+    $rol_nombre = "Técnico";
+}
+
+// Stats
+$res_total = mysqli_query($conexion, "SELECT COUNT(*) as c FROM equipo");
+$total_equipos = mysqli_fetch_assoc($res_total)["c"];
+
+$res_rep = mysqli_query($conexion, "SELECT COUNT(*) as c FROM equipo WHERE estado = 'En Reparacion' OR estado = 'En Uso'");
+$equipos_uso = mysqli_fetch_assoc($res_rep)["c"];
+
+$res_mov = mysqli_query($conexion, "SELECT COUNT(*) as c FROM historial_equipo WHERE MONTH(fecha_asignacion) = MONTH(CURRENT_DATE())");
+$movimientos = mysqli_fetch_assoc($res_mov)["c"];
+
+// Ultimos movimientos
+$sql_ultimos = "SELECT h.fecha_asignacion, e.nombre_equipo, CONCAT(u.nombre, ' ', u.apellido) as user
+                FROM historial_equipo h
+                JOIN equipo e ON h.id_equipo = e.id_equipo
+                JOIN usuario u ON h.id_usuario = u.id_usuario
+                ORDER BY h.fecha_asignacion DESC LIMIT 4";
+$res_ultimos = mysqli_query($conexion, $sql_ultimos);
+?>

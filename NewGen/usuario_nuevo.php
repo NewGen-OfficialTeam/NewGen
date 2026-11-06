@@ -1,45 +1,118 @@
 <?php
+include("seguridad.php");
 include("conexion.php");
+
 $q_roles = mysqli_query($conexion, "SELECT * FROM rol");
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Nuevo Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewGen - Nuevo Usuario</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png?v=4">
+    <link rel="shortcut icon" type="image/png" href="favicon.png?v=4">
+
+    <!-- Inicialización inmediata del tema para evitar parpadeos -->
+    <script>
+        (function() {
+            var t = localStorage.getItem('newgen_theme') || localStorage.getItem('theme') || 'dark';
+            if (t === 'light') {
+                document.documentElement.classList.add('light-mode');
+            } else {
+                document.documentElement.classList.remove('light-mode');
+            }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <a href="usuarios.php">Volver a Usuarios</a>
-    <hr>
-    <h2>Agregar Nuevo Usuario</h2>
-    <form action="usuario_guardar.php" method="POST">
-        <label>Nombre:</label><br>
-        <input type="text" name="nombre" required><br><br>
+    <header class="top-bar">
+        <a href="dashboard.php" class="logo-brand">
+            <img src="logo.png" alt="NewGen Logo" style="height: 38px;">
+            <span>NewGen</span>
+        </a>
+        <div class="d-flex gap-3 align-items-center">
+            <a href="usuarios.php" style="color: var(--top-bar-text); font-weight: 700; text-decoration: none;" data-i18n="back_to_users">Volver a usuarios</a>
+            
+            <!-- Botón Selector de Idioma (ES / EN) -->
+            <button class="btn btn-sm lang-toggle-btn" id="langToggle" title="Cambiar idioma / Switch language">
+                🌐 ES
+            </button>
 
-        <label>Apellido:</label><br>
-        <input type="text" name="apellido" required><br><br>
+            <button class="btn btn-sm theme-toggle-btn rounded-circle" id="themeToggle" style="width: 36px; height: 36px;" title="Cambiar tema">
+                <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                </svg>
+            </button>
+            <a href="logout.php" class="btn btn-sm btn-outline-danger" style="display:flex; align-items:center; justify-content:center; width:36px; height:36px;" title="Cerrar sesión">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+    <div class="container mt-5" style="max-width: 600px;">
+        <div class="profile-card d-block p-4">
+            <h2 class="mb-4 text-center" style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: #C78FFC !important;" data-i18n="users_add_btn">Crear nuevo usuario</h2>
+            
+            <form action="usuario_guardar.php" method="POST">
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label class="form-label text-muted">Nombre:</label>
+                        <input type="text" name="nombre" class="form-control bg-dark text-white border-secondary" required maxlength="100">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label text-muted">Apellido:</label>
+                        <input type="text" name="apellido" class="form-control bg-dark text-white border-secondary" required maxlength="100">
+                    </div>
+                </div>
 
-        <label>Contraseña:</label><br>
-        <input type="password" name="password" required><br><br>
+                <div class="mb-3">
+                    <label class="form-label text-muted">Email:</label>
+                    <input type="email" name="email" class="form-control bg-dark text-white border-secondary" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label text-muted">Contraseña (MD5):</label>
+                    <input type="password" name="password" class="form-control bg-dark text-white border-secondary" required minlength="4">
+                    <small class="text-muted" style="font-size:0.75rem;">Se encriptará automáticamente.</small>
+                </div>
 
-        <label>Rol:</label><br>
-        <select name="id_rol" required>
-            <option value="">Seleccione...</option>
-            <?php while($rol = mysqli_fetch_assoc($q_roles)){ ?>
-                <option value="<?= $rol['id_rol'] ?>"><?= $rol['nombre'] ?></option>
-            <?php } ?>
-        </select><br><br>
+                <div class="row mb-4">
+                    <div class="col-6">
+                        <label class="form-label text-muted">Rol:</label>
+                        <select name="id_rol" class="form-select bg-dark text-white border-secondary" required>
+                            <option value="">Seleccione...</option>
+                            <?php while($rol = mysqli_fetch_assoc($q_roles)){ ?>
+                                <option value="<?= $rol['id_rol'] ?>"><?= htmlspecialchars($rol['nombre']) ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label text-muted">Estado:</label>
+                        <select name="estado" class="form-select bg-dark text-white border-secondary" required>
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
 
-        <label>Estado:</label><br>
-        <select name="estado">
-            <option value="Activo">Activo</option>
-            <option value="Inactivo">Inactivo</option>
-        </select><br><br>
-
-        <button type="submit">Guardar</button>
-    </form>
+                <button type="submit" class="btn btn-primary w-100 fw-bold" style="background-color: #8B5CF6; border: none; font-family: 'Montserrat', sans-serif; color: #FFFFFF !important;">Guardar usuario</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="theme.js"></script>
+    <script src="lang.js"></script>
 </body>
 </html>

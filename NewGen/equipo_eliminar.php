@@ -1,14 +1,27 @@
 <?php
+include("seguridad.php");
 include("conexion.php");
 $id = intval($_GET['id']);
 
-// Borrar el historial asociado primero si existe (para no violar foreign key)
-mysqli_query($conexion, "DELETE FROM historial_equipo WHERE id_equipo = $id");
+// Iniciar la Transacción
+mysqli_begin_transaction($conexion);
 
-$sql = "DELETE FROM equipo WHERE id_equipo = $id";
-if(mysqli_query($conexion, $sql)){
+try {
+    // 1. Borrar el historial asociado primero (para no violar foreign key)
+    $sql1 = "DELETE FROM historial_equipo WHERE id_equipo = $id";
+    mysqli_query($conexion, $sql1);
+
+    // 2. Borrar el equipo
+    $sql2 = "DELETE FROM equipo WHERE id_equipo = $id";
+    mysqli_query($conexion, $sql2);
+
+    // Si ambas consultas funcionaron, confirmamos los cambios (COMMIT)
+    mysqli_commit($conexion);
+    
     header("Location: inventario.php");
-} else {
-    echo "Error al eliminar: " . mysqli_error($conexion);
+} catch (mysqli_sql_exception $exception) {
+    // Si algo falló, deshacemos todos los cambios (ROLLBACK)
+    mysqli_rollback($conexion);
+    echo "Error al eliminar (Transacción cancelada): " . $exception->getMessage();
 }
 ?>

@@ -4,7 +4,7 @@ include("conexion.php");
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $email = $_POST['email'];
-$password = $_POST['password']; // en un sistema real usarías password_hash()
+$password = md5($_POST['password']); // Encriptación MD5
 $id_rol = $_POST['id_rol'];
 $estado = $_POST['estado'];
 

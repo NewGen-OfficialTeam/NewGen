@@ -1,0 +1,6 @@
+# Large files & OS images
+*.iso
+*.vmdk
+*.vdi
+*.qcow2
+Server/*.iso

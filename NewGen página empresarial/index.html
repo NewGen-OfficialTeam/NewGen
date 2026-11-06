@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NewGen | Soluciones y Gestión de Infraestructura IT</title>
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- HEADER & NAVBAR -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand-link" href="#inicio">
+        <img src="logo_inicio.png" alt="NewGen Logo" class="brand-logo" />
+        <span class="brand-text">NewGen</span>
+      </a>
+      
+      <nav class="menu">
+        <a href="#inicio" class="menu-link" data-i18n="nav_home">Inicio</a>
+        <a href="#ventajas" class="menu-link" data-i18n="nav_why">Ventajas</a>
+        <a href="#modulos" class="menu-link" data-i18n="nav_modules">Módulos</a>
+        <a href="#servicios" class="menu-link" data-i18n="nav_services">Servicios</a>
+        <a href="#nosotros" class="menu-link" data-i18n="nav_about">Nosotros</a>
+        <a href="#contacto" class="menu-link" data-i18n="nav_contact">Contacto</a>
+        
+        <!-- BOTÓN SELECTOR DE IDIOMA -->
+        <button class="btn-lang-toggle" id="langToggle" title="Cambiar idioma / Switch language">
+          🌐 ES
+        </button>
+
+        <!-- BOTÓN PORTAL CLIENTES -->
+        <a href="http://localhost/NewGen/login.php" class="btn-nav-login" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+          </svg>
+          <span data-i18n="nav_portal">Portal Clientes</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" data-i18n="hero_eyebrow">Soporte & Gestión de Infraestructura IT</span>
+          <h1><span data-i18n="hero_title">Control total de tu ecosistema tecnológico con </span><span class="brand-gradient">NewGen</span>.</h1>
+          <p class="hero-desc" data-i18n="hero_desc">
+            Centralizamos la administración de tu parque informático, la resolución ágil de incidentes técnicos y la continuidad operativa en una plataforma moderna y escalable.
+          </p>
+          <div class="hero-actions">
+            <a href="http://localhost/NewGen/login.php" class="btn-hero-primary" target="_blank">
+              <span data-i18n="hero_btn_app">Ingresar al Sistema</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
+            </a>
+            <a href="#modulos" class="btn-hero-secondary" data-i18n="hero_btn_modules">Explorar Módulos</a>
+          </div>
+        </div>
+
+        <div class="hero-card-wrapper">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span class="hero-card-title" data-i18n="hero_card_title">Centro de Operaciones NewGen</span>
+              <span class="status-badge">
+                <span class="status-dot"></span> <span data-i18n="hero_card_status">En línea 24/7</span>
+              </span>
+            </div>
+            <div class="hero-metrics-list">
+              <div class="hero-metric-item">
+                <span class="hero-metric-label" data-i18n="hero_card_label1">Tiempo de primera respuesta</span>
+                <span class="hero-metric-val" data-i18n="hero_card_val1">&lt; 15 minutos</span>
+              </div>
+              <div class="hero-metric-item">
+                <span class="hero-metric-label" data-i18n="hero_card_label2">Resolución efectiva de incidentes</span>
+                <span class="hero-metric-val" data-i18n="hero_card_val2">99.4%</span>
+              </div>
+              <div class="hero-metric-item">
+                <span class="hero-metric-label" data-i18n="hero_card_label3">Activos monitoreados en red</span>
+                <span class="hero-metric-val" data-i18n="hero_card_val3">+350 activos</span>
+              </div>
+              <div class="hero-metric-item">
+                <span class="hero-metric-label" data-i18n="hero_card_label4">Disponibilidad de infraestructura</span>
+                <span class="hero-metric-val" data-i18n="hero_card_val4">99.9% Uptime</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. VENTAJAS COMPETITIVAS (Estructura propia y moderna) -->
+    <section id="ventajas" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag" data-i18n="why_tag">Por qué NewGen</span>
+          <h2 data-i18n="why_title">Construido para la estabilidad operativa de tu empresa</h2>
+          <p data-i18n="why_desc">
+            Eliminamos el desorden tecnológico y minimizamos los tiempos de inactividad con procesos estandarizados.
+          </p>
+        </div>
+
+        <div class="grid-4-features">
+          <!-- Item 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="why_c1_title">Resolución Ágil de Incidentes</h3>
+            <p data-i18n="why_c1_desc">
+              Derivación técnica automática por criticidad y área de especialización con tiempos de respuesta récord.
+            </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="why_c2_title">Trazabilidad Total de Activos</h3>
+            <p data-i18n="why_c2_desc">
+              Auditoría en tiempo real de cada equipo, marca, modelo y usuario asignado en tu infraestructura corporativa.
+            </p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="why_c3_title">Seguridad y Respaldo Continuo</h3>
+            <p data-i18n="why_c3_desc">
+              Políticas automatizadas de backup mediante Cron y control estricto de acceso basado en roles (RBAC).
+            </p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="why_c4_title">Arquitectura Linux Optimizada</h3>
+            <p data-i18n="why_c4_desc">
+              Servidor Debian 13 netinst de bajo consumo de memoria RAM, sin interfaz gráfica y máxima resiliencia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MÓDULOS DEL ECOSISTEMA (Showcase de la Aplicación) -->
+    <section id="modulos" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag" data-i18n="mod_tag">Plataforma Integral</span>
+          <h2 data-i18n="mod_title">Módulos diseñados para optimizar cada etapa técnica</h2>
+          <p data-i18n="mod_desc">
+            Una suite de herramientas conectadas que potencia el trabajo coordinado entre usuarios y personal técnico.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- MODULO 1 -->
+          <article class="feature-card feature-card-highlight">
+            <div class="card-badge">Módulo 01</div>
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5v7a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5v-7zM1.5 4a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-13z"/>
+                <path d="M4 8.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="mod1_title">Mesa de Ayuda (Help Desk)</h3>
+            <p data-i18n="mod1_desc">
+              Recepción centralizada de solicitudes de soporte técnico. Registro rápido, categorización por urgencia y seguimiento paso a paso hasta el cierre.
+            </p>
+          </article>
+
+          <!-- MODULO 2 -->
+          <article class="feature-card feature-card-highlight">
+            <div class="card-badge">Módulo 02</div>
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="mod2_title">Control de Inventario IT</h3>
+            <p data-i18n="mod2_desc">
+              Catálogo exhaustivo de hardware: laptops, monitores, periféricos y servidores. Control de disponibilidad, estados de reparación y reasignaciones.
+            </p>
+          </article>
+
+          <!-- MODULO 3 -->
+          <article class="feature-card feature-card-highlight">
+            <div class="card-badge">Módulo 03</div>
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="mod3_title">Auditoría & Métricas en Vivo</h3>
+            <p data-i18n="mod3_desc">
+              Panel de control con reportes ejecutivos, estadísticas de equipos por categoría, estado de tickets y reportes imprimibles con un solo clic.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICIOS PROFESIONALES -->
+    <section id="servicios" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag" data-i18n="serv_tag">Servicios Profesionales</span>
+          <h2 data-i18n="serv_title">Acompañamiento técnico integral de punta a punta</h2>
+          <p data-i18n="serv_desc">Nos encargamos de la ingeniería de sistemas para que tu empresa opere con tranquilidad y foco en el negocio.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="feature-card">
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="serv1_title">Administración de Servidores & Linux</h3>
+            <p data-i18n="serv1_desc">Configuración y endurecimiento de servidores Debian, despliegue de entornos LAMP (Linux, Apache, MySQL/MariaDB, PHP) y virtualización eficiente.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="serv2_title">Mantenimiento Preventivo & Correctivo</h3>
+            <p data-i18n="serv2_desc">Diagnóstico temprano de hardware, optimización de software, limpieza física y resolución inmediata de incidencias presenciales o remotas.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="serv3_title">Rutinas de Backup & Contingencia</h3>
+            <p data-i18n="serv3_desc">Automatización de respaldos periódicos con Cron, resguardo seguro de bases de datos y planes de recuperación rápida ante desastres.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SOBRE NOSOTROS (Identidad & Métricas) -->
+    <section id="nosotros" class="section">
+      <div class="container about-grid">
+        <div class="about-text">
+          <span class="section-tag" data-i18n="about_tag">Nuestra Identidad</span>
+          <h2 data-i18n="about_title">Innovación y soporte técnico con estándar profesional</h2>
+          <p data-i18n="about_p1">
+            NewGen nace como el proyecto final de egreso del Bachillerato Tecnológico en Informática (UTU 2026), impulsado por la vocación de crear soluciones tecnológicas sólidas, funcionales y adaptadas al entorno corporativo real.
+          </p>
+          <p data-i18n="about_p2">
+            Entendemos que cada minuto que un sistema se interrumpe representa una pérdida de productividad. Por ello, diseñamos una arquitectura orientada a la eficiencia y la transparencia operativa.
+          </p>
+          <p data-i18n="about_p3">
+            Combinamos metodologías ágiles de soporte, estándares rigurosos de seguridad de la información y software a medida desarrollado bajo buenas prácticas.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-number" data-i18n="stat1_num">+1,200</span>
+            <span class="stat-label" data-i18n="stat1_lbl">Incidentes Resueltos</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" data-i18n="stat2_num">99.8%</span>
+            <span class="stat-label" data-i18n="stat2_lbl">Disponibilidad del Sistema</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" data-i18n="stat3_num">100%</span>
+            <span class="stat-label" data-i18n="stat3_lbl">Trazabilidad de Equipos</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number" data-i18n="stat4_num">24/7</span>
+            <span class="stat-label" data-i18n="stat4_lbl">Monitoreo Operativo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BANNER DE LLAMADO A LA ACCIÓN (CTA) -->
+    <section class="section-cta">
+      <div class="container">
+        <div class="cta-box">
+          <div class="cta-copy">
+            <h2 data-i18n="cta_title">¿Listo para optimizar la tecnología de tu organización?</h2>
+            <p data-i18n="cta_desc">Accedé al panel centralizado de NewGen con tus credenciales institucionales o contactanos para más información.</p>
+          </div>
+          <a href="http://localhost/NewGen/login.php" class="btn-hero-primary" target="_blank">
+            <span data-i18n="cta_btn">Ingresar a NewGen</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. FOOTER CORPORATIVO CON REDES SOCIALES OFICIALES -->
+  <footer id="contacto" class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <!-- Columna 1: Brand & Bio -->
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="logo_inicio.png" alt="NewGen Logo" class="footer-logo" />
+            <span class="brand-text">NewGen</span>
+          </div>
+          <p class="footer-desc-text" data-i18n="footer_desc">
+            Plataforma integral de gestión informática y soporte técnico para organizaciones modernas. Proyecto Final de Egreso BT TI 2026.
+          </p>
+          <div class="footer-badge-tag">UTU &middot; 3° BT Informática</div>
+        </div>
+
+        <!-- Columna 2: Navegación Rápida -->
+        <div class="footer-col">
+          <h4 class="footer-title" data-i18n="footer_nav_title">Navegación</h4>
+          <ul class="footer-links-list">
+            <li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="#ventajas" data-i18n="nav_why">Ventajas</a></li>
+            <li><a href="#modulos" data-i18n="nav_modules">Módulos</a></li>
+            <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="http://localhost/NewGen/login.php" target="_blank" class="footer-link-highlight" data-i18n="nav_portal">Portal Clientes &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: REDES SOCIALES OFICIALES (Instagram, TikTok, YouTube) -->
+        <div class="footer-col">
+          <h4 class="footer-title" data-i18n="footer_social_title">Seguinos en Redes</h4>
+          <p class="footer-social-intro">Conectá con nuestro equipo y enterate de las últimas novedades del proyecto:</p>
+          
+          <div class="social-channels-list">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/newgenoficial67/" target="_blank" rel="noopener noreferrer" class="social-channel-item social-instagram" title="Seguinos en Instagram">
+              <div class="social-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg>
+              </div>
+              <div class="social-channel-text">
+                <span class="social-channel-platform">Instagram</span>
+                <span class="social-channel-handle">@newgenoficial67</span>
+              </div>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@newgen5259?lang=es" target="_blank" rel="noopener noreferrer" class="social-channel-item social-tiktok" title="Seguinos en TikTok">
+              <div class="social-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+                </svg>
+              </div>
+              <div class="social-channel-text">
+                <span class="social-channel-platform">TikTok</span>
+                <span class="social-channel-handle">@newgen5259</span>
+              </div>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com/@newgenuy?si=UhKYTk4PoyOn8CiN" target="_blank" rel="noopener noreferrer" class="social-channel-item social-youtube" title="Suscribite a nuestro canal de YouTube">
+              <div class="social-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v5.582l4.8-2.791L6.4 5.209z"/>
+                </svg>
+              </div>
+              <div class="social-channel-text">
+                <span class="social-channel-platform">YouTube</span>
+                <span class="social-channel-handle">@newgenuy</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra inferior de copyright -->
+      <div class="footer-bottom-bar">
+        <p data-i18n="footer_copy">&copy; 2026 NewGen Technologies - Bachillerato Tecnológico en Informática.</p>
+        <p>Contacto oficial: <a href="mailto:soporte@newgen.com" class="footer-email-link" data-i18n="footer_email">soporte@newgen.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE INTERNACIONALIZACIÓN (i18n) -->
+  <script src="./lang.js"></script>
+</body>
+</html>

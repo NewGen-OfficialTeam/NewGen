@@ -1,0 +1,1065 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+
+:root {
+    --bg-main: #0B0917;
+    --bg-card: #151327;
+    --bg-card-hover: #1A1733;
+    --accent-purple: #8B5CF6;
+    --accent-purple-glow: rgba(139, 92, 246, 0.4);
+    --accent-light: #C78FFC;
+    --accent-pink: #EC4899;
+    --accent-green: #06D6A0;
+    --accent-blue: #38BDF8;
+    --text-main: #FFFFFF;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(139, 92, 246, 0.22);
+    --border-glow: rgba(139, 92, 246, 0.45);
+    --top-bar-bg: #D5C4FA;
+    --top-bar-text: #1E1538;
+}
+
+html {
+    background-color: var(--bg-main);
+}
+
+body {
+    background-color: var(--bg-main) !important;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 90% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 45%);
+    color: var(--text-main);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Montserrat', Roboto, sans-serif;
+    transition: background-color 0.25s, color 0.25s;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Modo Claro */
+html.light-mode,
+html.light-mode body,
+body.light-mode {
+    --bg-main: #F5EEFF; 
+    --bg-card: #FAF5FF;
+    --bg-card-hover: #F3E8FF;
+    --border-color: #D8B4FE;
+    --border-glow: #A855F7;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --top-bar-bg: #E4D4FF;
+    --top-bar-text: #1E1538;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 70%, rgba(236, 72, 153, 0.05) 0%, transparent 45%);
+    background-color: var(--bg-main) !important;
+}
+
+/* Modos de Texto */
+body.light-mode,
+html.light-mode body {
+    color: var(--text-main);
+}
+body.light-mode .text-white,
+html.light-mode .text-white {
+    color: var(--text-main) !important;
+}
+body.light-mode .text-muted,
+html.light-mode .text-muted {
+    color: var(--text-muted) !important;
+}
+
+body:not(.light-mode) .text-white {
+    color: #FFFFFF !important;
+}
+body:not(.light-mode) .text-muted {
+    color: #9CA3AF !important;
+}
+
+/* =======================================================
+   BOTONES PRIMARIOS Y VIOLETAS: SIEMPRE TEXTO BLANCO
+   ======================================================= */
+.btn-primary, 
+.btn-primary *,
+button.btn-primary,
+button.btn-primary *,
+a.btn-primary,
+a.btn-primary *,
+body.light-mode .btn-primary,
+body.light-mode .btn-primary *,
+body.light-mode button.btn-primary,
+body.light-mode button.btn-primary *,
+body.light-mode a.btn-primary,
+body.light-mode a.btn-primary *,
+html.light-mode .btn-primary,
+html.light-mode .btn-primary *,
+button[type="submit"],
+button[type="submit"] *,
+body.light-mode button[type="submit"],
+body.light-mode button[type="submit"] *,
+html.light-mode button[type="submit"],
+html.light-mode button[type="submit"] *,
+.btn-purple,
+.btn-purple *,
+body.light-mode .btn-purple,
+body.light-mode .btn-purple *,
+html.light-mode .btn-purple,
+html.light-mode .btn-purple * {
+    color: #FFFFFF !important;
+}
+
+/* Badges: siempre texto blanco */
+.badge,
+body.light-mode .badge,
+html.light-mode .badge,
+.top-bar .badge,
+body.light-mode .top-bar .badge,
+html.light-mode .top-bar .badge {
+    color: #FFFFFF !important;
+}
+
+/* =======================================================
+   BOTONES OUTLINE (Imprimir Reportes, etc.)
+   Modo Oscuro: borde claro y texto blanco
+   Modo Claro: borde negro/oscuro y texto negro/oscuro
+   ======================================================= */
+.btn-outline-custom,
+.btn-outline-light,
+#btnPrintReport {
+    color: #FFFFFF !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+    background-color: transparent !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover,
+.btn-outline-light:hover,
+#btnPrintReport:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
+
+body.light-mode .btn-outline-custom,
+html.light-mode .btn-outline-custom,
+body.light-mode .btn-outline-light,
+html.light-mode .btn-outline-light,
+body.light-mode #btnPrintReport,
+html.light-mode #btnPrintReport {
+    color: #1F2937 !important;
+    border: 1.5px solid #1F2937 !important;
+    background-color: transparent !important;
+    font-weight: 700 !important;
+}
+
+body.light-mode .btn-outline-custom:hover,
+html.light-mode .btn-outline-custom:hover,
+body.light-mode .btn-outline-light:hover,
+html.light-mode .btn-outline-light:hover,
+body.light-mode #btnPrintReport:hover,
+html.light-mode #btnPrintReport:hover {
+    background-color: #1F2937 !important;
+    color: #FFFFFF !important;
+    border-color: #1F2937 !important;
+}
+
+/* TOP BAR (Barra Superior Uniforme) */
+.top-bar {
+    background-color: var(--top-bar-bg) !important;
+    color: var(--top-bar-text) !important;
+    padding: 10px 24px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+    width: 96% !important;
+    max-width: 1540px !important;
+    margin: 12px auto 0 !important;
+    transition: all 0.3s ease;
+}
+
+.top-bar .logo-brand,
+.top-bar .logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    color: var(--top-bar-text) !important;
+    letter-spacing: -0.02em !important;
+}
+
+.top-bar .logo-brand span,
+.top-bar .logo span {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    letter-spacing: -0.02em !important;
+    color: var(--top-bar-text) !important;
+}
+
+.top-bar, 
+.top-bar *:not(.badge) {
+    color: var(--top-bar-text) !important;
+    font-weight: 600;
+}
+
+/* THEME TOGGLE */
+.theme-toggle-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: 1px solid var(--top-bar-text) !important;
+    background-color: transparent !important;
+    color: var(--top-bar-text) !important;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.theme-toggle-btn:hover {
+    background-color: rgba(30, 21, 56, 0.12) !important;
+}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 4px 11px !important;
+    border: 1px solid var(--top-bar-text) !important;
+    background-color: transparent !important;
+    color: var(--top-bar-text) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    border-radius: 9999px !important;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    line-height: 1 !important;
+    height: 36px !important;
+}
+.lang-toggle-btn:hover {
+    background-color: rgba(30, 21, 56, 0.12) !important;
+    transform: translateY(-1px);
+}
+
+/* =======================================================
+   ESTILOS DE LOGIN Y BOTONES FUERA DE LA TOP BAR
+   En modo oscuro: bordes claros luminosos y texto blanco.
+   En modo claro: bordes violetas nítidos y texto oscuro.
+   ======================================================= */
+.login-page .lang-toggle-btn,
+.login-page .theme-toggle-btn,
+body:not(.light-mode) .login-page .lang-toggle-btn,
+body:not(.light-mode) .login-page .theme-toggle-btn {
+    border: 1.5px solid rgba(199, 143, 252, 0.5) !important;
+    color: #FFFFFF !important;
+    background-color: rgba(139, 92, 246, 0.14) !important;
+}
+
+.login-page .lang-toggle-btn svg,
+.login-page .theme-toggle-btn svg,
+body:not(.light-mode) .login-page .lang-toggle-btn svg,
+body:not(.light-mode) .login-page .theme-toggle-btn svg {
+    color: #FFFFFF !important;
+    fill: currentColor !important;
+}
+
+.login-page .lang-toggle-btn:hover,
+.login-page .theme-toggle-btn:hover,
+body:not(.light-mode) .login-page .lang-toggle-btn:hover,
+body:not(.light-mode) .login-page .theme-toggle-btn:hover {
+    border-color: #C78FFC !important;
+    color: #FFFFFF !important;
+    background-color: rgba(139, 92, 246, 0.3) !important;
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Modo claro en Login */
+body.light-mode .login-page .lang-toggle-btn,
+body.light-mode .login-page .theme-toggle-btn,
+html.light-mode .login-page .lang-toggle-btn,
+html.light-mode .login-page .theme-toggle-btn,
+body.light-mode.login-page .lang-toggle-btn,
+body.light-mode.login-page .theme-toggle-btn {
+    border: 1.5px solid #8B5CF6 !important;
+    color: #5B21B6 !important;
+    background-color: rgba(139, 92, 246, 0.08) !important;
+}
+
+body.light-mode .login-page .lang-toggle-btn svg,
+body.light-mode .login-page .theme-toggle-btn svg,
+html.light-mode .login-page .lang-toggle-btn svg,
+html.light-mode .login-page .theme-toggle-btn svg {
+    color: #5B21B6 !important;
+    fill: currentColor !important;
+}
+
+body.light-mode .login-page .lang-toggle-btn:hover,
+body.light-mode .login-page .theme-toggle-btn:hover,
+html.light-mode .login-page .lang-toggle-btn:hover,
+html.light-mode .login-page .theme-toggle-btn:hover {
+    border-color: #7C3AED !important;
+    color: #4C1D95 !important;
+    background-color: rgba(139, 92, 246, 0.18) !important;
+}
+
+/* Tarjeta de Login (Borde claro en modo oscuro) */
+.login-card {
+    border: 1.5px solid rgba(199, 143, 252, 0.35) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), 0 0 20px rgba(139, 92, 246, 0.15) !important;
+}
+
+body.light-mode .login-card,
+html.light-mode .login-card {
+    border: 1.5px solid #D8B4FE !important;
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.12) !important;
+}
+
+/* Inputs de Login (Bordes claros y legibles) */
+.login-input {
+    background-color: rgba(21, 19, 39, 0.95) !important;
+    border: 1.5px solid rgba(199, 143, 252, 0.4) !important;
+    color: #FFFFFF !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+.login-input:focus {
+    border-color: #C78FFC !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3) !important;
+    background-color: rgba(26, 23, 48, 0.98) !important;
+    color: #FFFFFF !important;
+}
+
+.login-input::placeholder {
+    color: #9CA3AF !important;
+    opacity: 0.7;
+}
+
+body.light-mode .login-input,
+html.light-mode .login-input {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid #D8B4FE !important;
+    color: #1F2937 !important;
+}
+
+body.light-mode .login-input:focus,
+html.light-mode .login-input:focus {
+    border-color: #8B5CF6 !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2) !important;
+    color: #1F2937 !important;
+}
+
+/* LAYOUT CONTAINER ESPACIOSO */
+.dashboard-container {
+    width: 96% !important;
+    max-width: 1540px !important;
+    margin: 0 auto !important;
+    padding: 24px 0 40px !important;
+}
+
+/* WELCOME & PROFILE ROW */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.welcome-title {
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+}
+
+.welcome-desc {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    margin: 0;
+}
+
+/* PROFILE CARD */
+.profile-pill-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+.profile-avatar-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7C3AED, #A78BFA);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #FFFFFF !important;
+    font-size: 1.15rem;
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-weight: 700;
+    font-size: 0.96rem;
+    line-height: 1.2;
+}
+
+.profile-email {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 2px 0 4px;
+}
+
+/* 6 NAVIGATION CARDS */
+.nav-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.nav-card-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-card-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 6px 22px var(--accent-purple-glow);
+    background-color: var(--bg-card-hover);
+    color: var(--text-main);
+}
+
+.nav-card-item.active {
+    border: 1.8px solid var(--accent-purple);
+    box-shadow: 0 0 20px var(--accent-purple-glow), inset 0 0 14px rgba(139, 92, 246, 0.15);
+}
+
+.nav-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.nav-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-light);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+.nav-card-item.active .nav-icon-box {
+    background: rgba(139, 92, 246, 0.35);
+    color: #FFFFFF;
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.5);
+}
+
+.nav-card-label {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.nav-card-arrow {
+    color: var(--text-muted);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-card-item:hover .nav-card-arrow {
+    transform: translateX(4px);
+    color: var(--accent-purple);
+}
+
+/* STAT CARDS ROW */
+.stat-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.stat-box-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.stat-box-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-glow);
+}
+
+.stat-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(139, 92, 246, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-light);
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.25);
+    flex-shrink: 0;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.stat-value-text {
+    font-size: 2.1rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 4px 0;
+    letter-spacing: -0.02em;
+}
+
+.stat-trend-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.stat-trend-green {
+    color: #06D6A0 !important;
+}
+body.light-mode .stat-trend-green,
+html.light-mode .stat-trend-green {
+    color: #059669 !important;
+}
+
+.stat-trend-pink {
+    color: #EC4899 !important;
+}
+body.light-mode .stat-trend-pink,
+html.light-mode .stat-trend-pink {
+    color: #DC2626 !important;
+}
+
+.stat-trend-blue {
+    color: #38BDF8 !important;
+}
+body.light-mode .stat-trend-blue,
+html.light-mode .stat-trend-blue {
+    color: #0284C7 !important;
+}
+
+/* =======================================================
+   INVENTORY EVOLUTION CHART CARD CON CUADRÍCULA EXACTA
+   ======================================================= */
+.chart-card-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.chart-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-dot-purple {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--accent-purple);
+    box-shadow: 0 0 8px var(--accent-purple);
+}
+
+.legend-dot-pink {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--accent-pink);
+    box-shadow: 0 0 8px var(--accent-pink);
+}
+
+/* CONTENEDOR DE LA GRÁFICA CON ALTURA FIJA Y EXACTA */
+.chart-body-wrapper {
+    position: relative;
+    height: 220px;
+    margin-bottom: 28px;
+}
+
+.chart-grid-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.chart-grid-row {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+.chart-y-label {
+    width: 36px;
+    text-align: right;
+    margin-right: 14px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.chart-grid-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.chart-grid-baseline {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+body.light-mode .chart-grid-line,
+html.light-mode .chart-grid-line {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .chart-grid-baseline,
+html.light-mode .chart-grid-baseline {
+    background-color: rgba(0, 0, 0, 0.22);
+}
+
+/* ÁREA DE BARRAS DE 9 MESES */
+.chart-bars-container {
+    position: absolute;
+    left: 50px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.chart-month-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.chart-dual-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 100%;
+    z-index: 2;
+}
+
+.bar-purple {
+    width: 14px;
+    background: linear-gradient(180deg, #A78BFA 0%, #7C3AED 100%);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.35);
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bar-pink {
+    width: 14px;
+    background: linear-gradient(180deg, #F472B6 0%, #DB2777 100%);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 10px rgba(219, 39, 119, 0.35);
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chart-month-label {
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* RIGHT COLUMN: MOVIMIENTOS CARD */
+.movements-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.movements-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.movements-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.movements-view-all {
+    color: #8B5CF6 !important;
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+body.light-mode .movements-view-all,
+html.light-mode .movements-view-all {
+    color: #7C3AED !important;
+}
+
+.movements-view-all:hover,
+body.light-mode .movements-view-all:hover,
+html.light-mode .movements-view-all:hover {
+    transform: translateX(3px);
+    color: #6D28D9 !important;
+}
+
+.movements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.movement-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.light-mode .movement-row,
+html.light-mode .movement-row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.movement-row:last-child {
+    border-bottom: none;
+}
+
+.movement-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.movement-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.16);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-light);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+    flex-shrink: 0;
+}
+
+body.light-mode .movement-icon-box,
+html.light-mode .movement-icon-box {
+    background: rgba(139, 92, 246, 0.12) !important;
+    border-color: rgba(139, 92, 246, 0.3) !important;
+    color: #7C3AED !important;
+}
+
+body.light-mode .movement-icon-box svg,
+html.light-mode .movement-icon-box svg {
+    color: #7C3AED !important;
+}
+
+.movement-title {
+    font-weight: 700;
+    font-size: 0.92rem;
+    line-height: 1.2;
+}
+
+.movement-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.movement-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.movement-diff {
+    font-weight: 800;
+    font-size: 0.98rem;
+}
+
+.movement-diff-plus {
+    color: #06D6A0 !important;
+}
+
+body.light-mode .movement-diff-plus,
+html.light-mode .movement-diff-plus {
+    color: #059669 !important; /* Verde vivo de alto contraste */
+}
+
+.movement-diff-minus {
+    color: #EC4899 !important;
+}
+
+body.light-mode .movement-diff-minus,
+html.light-mode .movement-diff-minus {
+    color: #DC2626 !important; /* Rojo vivo de alto contraste */
+}
+
+.movement-date {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+}
+
+/* =======================================================
+   ESTILOS DE TABLAS Y TARJETAS PARA TODAS LAS PÁGINAS
+   ======================================================= */
+.list-card {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 18px !important;
+    padding: 24px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+    color: var(--text-main) !important;
+}
+
+.profile-card {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+.table-custom {
+    color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+    background-color: transparent !important;
+    margin-bottom: 0 !important;
+}
+
+.table-custom th {
+    background-color: rgba(139, 92, 246, 0.2) !important;
+    color: var(--text-main) !important;
+    border-bottom: 2px solid var(--accent-purple) !important;
+    border-top: none !important;
+    padding: 14px 16px !important;
+    font-weight: 700 !important;
+}
+
+.table-custom td {
+    background-color: transparent !important;
+    color: var(--text-main) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    border-top: none !important;
+    padding: 14px 16px !important;
+    vertical-align: middle !important;
+}
+
+.table-custom tbody tr:hover td {
+    background-color: rgba(139, 92, 246, 0.1) !important;
+}
+
+/* Modo Claro Tablas */
+body.light-mode .table-custom th,
+html.light-mode .table-custom th {
+    background-color: #EDE4FF !important;
+    color: #1F2937 !important;
+    border-bottom: 2px solid #8B5CF6 !important;
+}
+
+body.light-mode .table-custom td,
+html.light-mode .table-custom td {
+    color: #1F2937 !important;
+    border-bottom: 1px solid #E5D7FA !important;
+}
+
+body.light-mode .table-custom tbody tr:hover td,
+html.light-mode .table-custom tbody tr:hover td {
+    background-color: #F3E8FF !important;
+}
+
+/* Tablas bootstrap reset */
+.table {
+    --bs-table-bg: transparent !important;
+    --bs-table-color: inherit !important;
+}
+
+/* Formularios Fixes */
+body.light-mode .bg-dark,
+html.light-mode .bg-dark {
+    background-color: #FFFFFF !important;
+    color: #1F2937 !important;
+    border: 1px solid #D1D5DB !important;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1280px) {
+    .nav-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-container {
+        padding: 16px 0 30px !important;
+    }
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile-pill-card {
+        width: 100%;
+    }
+    .stat-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .chart-month-group:nth-child(n+7) {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .top-bar {
+        padding: 8px 14px !important;
+    }
+}
+
+/* ===================================================
+   ANIMACIONES DE FÍSICA (M.R.U. y M.R.U.V.)
+   =================================================== */
+
+/* 1. M.R.U.V. */
+@keyframes mruvDashboardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-box-card, .chart-card-box, .movements-card, .nav-card-item {
+  animation: mruvDashboardEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. M.R.U. */
+@keyframes mruSubtleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.profile-avatar-circle {
+  animation: mruSubtleFloat 3.5s linear infinite;
+}
