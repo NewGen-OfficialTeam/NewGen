@@ -13,7 +13,11 @@ $email_usuario = $_SESSION["email"] ?? (strtolower($nombre_usuario) . "@newgen.c
 $id_usuario = $_SESSION["id"] ?? 1;
 
 // Iniciales
-$iniciales = strtoupper(mb_substr($nombre_usuario, 0, 2, 'UTF-8'));
+if (function_exists('mb_substr')) {
+    $iniciales = strtoupper(mb_substr($nombre_usuario, 0, 2, 'UTF-8'));
+} else {
+    $iniciales = strtoupper(substr($nombre_usuario, 0, 2));
+}
 
 // Determinar Rol
 $rol_id = $_SESSION['rol'] ?? 1;
@@ -78,6 +82,11 @@ $movimientos_display = 312 + $tickets_abiertos;
             <span class="badge rounded-pill px-3 py-2" style="background-color: #8B5CF6; font-size: 0.88rem;">
                 <?= htmlspecialchars($rol_nombre) ?>
             </span>
+
+            <!-- Enlace al Sitio Corporativo -->
+            <a href="/sitio/index.html" class="btn btn-sm btn-outline-light d-flex align-items-center gap-1" style="border-radius: 20px; font-size: 0.82rem; font-weight: 600; text-decoration: none;" title="Ver sitio corporativo">
+                🏢 <span class="d-none d-md-inline">Sitio Web</span>
+            </a>
 
             <!-- Botón Selector de Idioma (ES / EN) -->
             <button class="btn btn-sm lang-toggle-btn" id="langToggle" title="Cambiar idioma / Switch language">

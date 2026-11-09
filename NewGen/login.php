@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
 
         <div class="mt-4">
-            <a href="http://localhost/NewGenEmpresarial/index.html" class="text-muted" style="font-size: 0.88rem; text-decoration: none;" data-i18n="login_back_home">&larr; Volver al sitio corporativo</a>
+            <a href="/sitio/index.html" class="text-muted" style="font-size: 0.88rem; text-decoration: none;" data-i18n="login_back_home">&larr; Volver al sitio corporativo</a>
         </div>
     </div>
 
