@@ -83,11 +83,6 @@ $movimientos_display = 312 + $tickets_abiertos;
                 <?= htmlspecialchars($rol_nombre) ?>
             </span>
 
-            <!-- Enlace al Sitio Corporativo -->
-            <a href="/sitio/index.html" class="btn btn-sm btn-outline-light d-flex align-items-center gap-1" style="border-radius: 20px; font-size: 0.82rem; font-weight: 600; text-decoration: none;" title="Ver sitio corporativo">
-                🏢 <span class="d-none d-md-inline">Sitio Web</span>
-            </a>
-
             <!-- Botón Selector de Idioma (ES / EN) -->
             <button class="btn btn-sm lang-toggle-btn" id="langToggle" title="Cambiar idioma / Switch language">
                 🌐 ES
