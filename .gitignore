@@ -3,4 +3,6 @@
 *.vmdk
 *.vdi
 *.qcow2
+*.ova
 Server/*.iso
+Server/*.ova
