@@ -83,7 +83,7 @@ const landingTranslations = {
     footer_social_title: "Seguinos en Redes",
     footer_contact_title: "Contacto",
     footer_copy: "© 2026 NewGen Technologies - Bachillerato Tecnológico en Informática.",
-    footer_email: "soporte@newgen.com"
+    footer_email: "newgenofficialteam0@gmail.com"
   },
 
   en: {
@@ -169,7 +169,7 @@ const landingTranslations = {
     footer_social_title: "Follow Our Channels",
     footer_contact_title: "Contact",
     footer_copy: "© 2026 NewGen Technologies - Technical Baccalaureate in Computer Science.",
-    footer_email: "soporte@newgen.com"
+    footer_email: "newgenofficialteam0@gmail.com"
   }
 };
 
